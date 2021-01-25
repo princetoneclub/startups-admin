@@ -45,7 +45,7 @@ public class TrialCompanyController {
         TrialCompany trialcompany = repository.findOne(id);
         if (trialcompany == null)
             return new ResponseEntity<TrialCompany>(HttpStatus.NOT_FOUND);
-        repository.delete(loan);
+        repository.delete(trialcompany);
         return new ResponseEntity<TrialCompany>(trialcompany, HttpStatus.OK);
     }
 

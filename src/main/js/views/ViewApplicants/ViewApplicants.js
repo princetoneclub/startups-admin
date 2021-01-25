@@ -38,12 +38,10 @@ class ViewApplicants extends Component {
 	}
 
 	async componentDidMount() {
-		var fullList = [];
-
 		await axios
 			.get('/api/trialcompany')
 			.then(res => {
-				fullList = res.data;
+                console.log("component mount",res.data);
 				this.setState({ fullList: res.data });
 			})
 			.catch(err => console.log(err));
@@ -53,7 +51,7 @@ class ViewApplicants extends Component {
     	await axios
 			.get('/api/trialcompany/' + startupId)
 			.then(res => {
-				console.log('Current Startup', res.data);
+				console.log('Display Info Current Startup', res.data);
 				this.setState(
 					{
 						startup: res.data,
@@ -206,7 +204,9 @@ class ViewApplicants extends Component {
 	}
 
 	render() {
+        console.log('before render table');
 		let renderTable = this.state.fullList.map(startup => {
+            console.log('in render table');
 			var trialCompanyList = this.state.fullList;
 			// console.log('USER TEAM LIST', userTeamList);
 			var trialCompany = '';
@@ -223,7 +223,7 @@ class ViewApplicants extends Component {
 			}
 			return [
 				<TableEntry
-					key={user.id}
+					key={startup.id}
 					name={startup.name}
 					industry={startup.industry}
 					technology={startup.technology}
@@ -235,12 +235,13 @@ class ViewApplicants extends Component {
 					onClick={() => this.displayInfo(startup.id)}
 				/>
 			];
-		});
+        });
+        console.log('after render table');
 
 		let display;
 		let viewStartup = this.state.viewStartup;
 
-		if (!viewUser) {
+		if (!viewStartup) {
             display = (
                 <div>
                     <Row className="center-block text-center">
@@ -264,7 +265,15 @@ class ViewApplicants extends Component {
 		} else {
             display = (
                 <StartupProfile
-                    startup={this.state.startup}
+                    // startup={this.state.startup}
+                    name={this.state.startup.name}
+					industry={this.state.startup.industry}
+					technology={this.state.startup.technology}
+                    region={this.state.startup.region}
+                    employeeCount={this.state.startup.employeeCount}
+                    totalFunding={this.state.startup.totalFunding}
+                    websiteLink={this.state.startup.websiteLink}
+					status={this.state.startup.status}
                     onClick={this.displayTable}
                     onAccept={this.changeStatusFirst}
                     onReject={this.changeStatusReject}
@@ -286,14 +295,14 @@ function StartupProfile(props) {
 					<p id="header">
 						{props.startup.name}
 					</p>
-					<p id="information"> Name: {props.startup.name}</p>
-					<p id="information"> Industry: {props.startup.industry}</p>
-					<p id="information"> Technology: {props.startup.technology}</p>
-					<p id="information"> Region: {props.startup.region}</p>
-					<p id="information"> Employee Count: {props.startup.employeeCount}</p>
-					<p id="information"> Total Funding: {props.startup.totalFunding}</p>
-					<p id="information"> Website Link: <a href={props.startup.websiteLink}>{props.startup.websiteLink}</a></p>
-					<p id="information"> Status:  {props.startup.status}</p>
+					<p id="information"> Name: {props.name}</p>
+					<p id="information"> Industry: {props.industry}</p>
+					<p id="information"> Technology: {props.technology}</p>
+					<p id="information"> Region: {props.region}</p>
+					<p id="information"> Employee Count: {props.employeeCount}</p>
+					<p id="information"> Total Funding: {props.totalFunding}</p>
+					<p id="information"> Website Link: <a href={props.websiteLink}>{props.startup.websiteLink}</a></p>
+					<p id="information"> Status:  {props.status}</p>
 				</div>
 			</div>
 			<div align="center">

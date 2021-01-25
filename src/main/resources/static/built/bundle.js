@@ -56502,15 +56502,13 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
       var _componentDidMount = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var _this2 = this;
 
-        var fullList;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                fullList = [];
-                _context.next = 3;
+                _context.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_10___default.a.get('/api/trialcompany').then(function (res) {
-                  fullList = res.data;
+                  console.log("component mount", res.data);
 
                   _this2.setState({
                     fullList: res.data
@@ -56519,7 +56517,7 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
                   return console.log(err);
                 });
 
-              case 3:
+              case 2:
               case "end":
                 return _context.stop();
             }
@@ -56545,7 +56543,7 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
               case 0:
                 _context2.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_10___default.a.get('/api/trialcompany/' + startupId).then(function (res) {
-                  console.log('Current Startup', res.data);
+                  console.log('Display Info Current Startup', res.data);
 
                   _this3.setState({
                     startup: res.data,
@@ -56722,7 +56720,9 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this7 = this;
 
+      console.log('before render table');
       var renderTable = this.state.fullList.map(function (startup) {
+        console.log('in render table');
         var trialCompanyList = _this7.state.fullList; // console.log('USER TEAM LIST', userTeamList);
 
         var trialCompany = '';
@@ -56740,7 +56740,7 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
         }
 
         return [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TableEntry, {
-          key: user.id,
+          key: startup.id,
           name: startup.name,
           industry: startup.industry,
           technology: startup.technology,
@@ -56754,10 +56754,11 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
           }
         })];
       });
+      console.log('after render table');
       var display;
       var viewStartup = this.state.viewStartup;
 
-      if (!viewUser) {
+      if (!viewStartup) {
         display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["Row"], {
           className: "center-block text-center"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["Table"], {
@@ -56778,8 +56779,16 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
           onClick: this.props.backButton
         })));
       } else {
-        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(StartupProfile, {
-          startup: this.state.startup,
+        display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(StartupProfile // startup={this.state.startup}
+        , {
+          name: this.state.startup.name,
+          industry: this.state.startup.industry,
+          technology: this.state.startup.technology,
+          region: this.state.startup.region,
+          employeeCount: this.state.startup.employeeCount,
+          totalFunding: this.state.startup.totalFunding,
+          websiteLink: this.state.startup.websiteLink,
+          status: this.state.startup.status,
           onClick: this.displayTable,
           onAccept: this.changeStatusFirst,
           onReject: this.changeStatusReject,
@@ -56803,23 +56812,23 @@ function StartupProfile(props) {
     id: "header"
   }, props.startup.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
-  }, " Name: ", props.startup.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+  }, " Name: ", props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
-  }, " Industry: ", props.startup.industry), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+  }, " Industry: ", props.industry), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
-  }, " Technology: ", props.startup.technology), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+  }, " Technology: ", props.technology), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
-  }, " Region: ", props.startup.region), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+  }, " Region: ", props.region), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
-  }, " Employee Count: ", props.startup.employeeCount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+  }, " Employee Count: ", props.employeeCount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
-  }, " Total Funding: ", props.startup.totalFunding), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+  }, " Total Funding: ", props.totalFunding), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
   }, " Website Link: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
-    href: props.startup.websiteLink
+    href: props.websiteLink
   }, props.startup.websiteLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
-  }, " Status:  ", props.startup.status))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+  }, " Status:  ", props.status))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     align: "center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     style: {

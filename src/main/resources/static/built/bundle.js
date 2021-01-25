@@ -56832,7 +56832,7 @@ function StartupProfile(props) {
     id: "information"
   }, " Website Link: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
     href: props.websiteLink
-  }, props.startup.websiteLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
+  }, props.websiteLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("p", {
     id: "information"
   }, " Status:  ", props.status))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
     align: "center"

@@ -304,7 +304,7 @@ function StartupProfile(props) {
 					<p id="information"> Region: {props.region}</p>
 					<p id="information"> Employee Count: {props.employeeCount}</p>
 					<p id="information"> Total Funding: {props.totalFunding}</p>
-					<p id="information"> Website Link: <a href={props.websiteLink}>{props.startup.websiteLink}</a></p>
+					<p id="information"> Website Link: <a href={props.websiteLink}>{props.websiteLink}</a></p>
 					<p id="information"> Status:  {props.status}</p>
 				</div>
 			</div>

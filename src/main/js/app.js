@@ -9,7 +9,7 @@ import './app.css';
 import Admin from './views/Admin/Admin.js';
 // import Login from './views/Login/login.js';
 // import LoginBadCred from './views/Login/loginbadcred.js';
-// import Home from './views/Home/Home.js';
+import Home from './views/Home/Home.js';
 // import Error from './views/404/404.js';
 // import Edit from './views/EditAccount/Editaccount.js';
 

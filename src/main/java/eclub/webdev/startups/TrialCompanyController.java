@@ -40,6 +40,15 @@ public class TrialCompanyController {
         return get(trialcompany.getId());
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+        public ResponseEntity<TrialCompany> delete(@PathVariable("id") Long id) {
+        TrialCompany trialcompany = repository.findOne(id);
+        if (trialcompany == null)
+            return new ResponseEntity<TrialCompany>(HttpStatus.NOT_FOUND);
+        repository.delete(loan);
+        return new ResponseEntity<TrialCompany>(trialcompany, HttpStatus.OK);
+    }
+
     @RequestMapping
     public List<TrialCompany> all() {
         return repository.findAll();

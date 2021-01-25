@@ -56508,8 +56508,6 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
               case 0:
                 _context.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_10___default.a.get('/api/trialcompany').then(function (res) {
-                  console.log("component mount", res.data);
-
                   _this2.setState({
                     fullList: res.data
                   });
@@ -56543,14 +56541,9 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
               case 0:
                 _context2.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_10___default.a.get('/api/trialcompany/' + startupId).then(function (res) {
-                  console.log('Display Info Current Startup', res.data);
-
                   _this3.setState({
                     startup: res.data,
                     viewStartup: true
-                  }, function () {// console.log('Get user on display info');
-                    // console.log(this.state.user);
-                    // console.log(this.state.teamOne);
                   });
                 })["catch"](function (err) {
                   return console.log(err);
@@ -56654,10 +56647,32 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
         }
       });
       var newTrialCompany = startup;
-      newTrialCompany.status = 'Accept';
-      axios__WEBPACK_IMPORTED_MODULE_10___default.a.patch('/api/trialcompany/' + startup.id, newTrialCompany).then(function (res) {
-        console.log('update trialcompany response: ', res.data);
+      var newCompany = {
+        name: startup.name,
+        industry: startup.industry,
+        technology: startup.technology,
+        region: startup.region,
+        employeeCount: startup.employeeCount,
+        totalFunding: startup.totalFunding,
+        websiteLink: startup.websiteLink
+      };
+      newTrialCompany.status = 'Accept'; // axios
+      // 	.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+      // 	.then(res => {
+      // 		this.setState({
+      // 			viewStartup: false
+      // 		});
+      // 	})
+      //     .catch(err => console.log(err));
 
+      axios__WEBPACK_IMPORTED_MODULE_10___default.a.post('/api/companies/new', newCompany).then(function (res) {
+        _this4.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_10___default.a["delete"]('/api/trialcompany/' + startup.id).then(function (res) {
         _this4.setState({
           viewStartup: false
         });
@@ -56720,11 +56735,8 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this7 = this;
 
-      console.log('before render table');
       var renderTable = this.state.fullList.map(function (startup) {
-        console.log('in render table');
-        var trialCompanyList = _this7.state.fullList; // console.log('USER TEAM LIST', userTeamList);
-
+        var trialCompanyList = _this7.state.fullList;
         var trialCompany = '';
 
         if (trialCompanyList == null) {
@@ -56754,7 +56766,6 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
           }
         })];
       });
-      console.log('after render table');
       var display;
       var viewStartup = this.state.viewStartup;
 
@@ -56945,7 +56956,7 @@ function StartupProfile(props) {
 function TableEntry(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.industry), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.technology), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.region), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.employeeCount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.totalFunding), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.websiteLink), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", {
     style: {
-      'background-color': props.status === 'Accept' ? 'lightgreen' : props.status === 'Reject' ? 'lightcoral' : 'white'
+      'background-color': props.status === 'Accept' ? 'lightgreen' : props.status === 'Reject' ? 'lightcoral' : 'orange'
     }
   }, props.status), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["Button"], {
     bsStyle: "view-more",

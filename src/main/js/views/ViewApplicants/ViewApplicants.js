@@ -41,7 +41,6 @@ class ViewApplicants extends Component {
 		await axios
 			.get('/api/trialcompany')
 			.then(res => {
-                console.log("component mount",res.data);
 				this.setState({ fullList: res.data });
 			})
 			.catch(err => console.log(err));
@@ -51,16 +50,10 @@ class ViewApplicants extends Component {
     	await axios
 			.get('/api/trialcompany/' + startupId)
 			.then(res => {
-				console.log('Display Info Current Startup', res.data);
 				this.setState(
 					{
 						startup: res.data,
 						viewStartup: true
-					},
-					function () {
-						// console.log('Get user on display info');
-						// console.log(this.state.user);
-						// console.log(this.state.teamOne);
 					}
 				);
 			})
@@ -147,16 +140,42 @@ class ViewApplicants extends Component {
 			}
 		});
         var newTrialCompany = startup;
+        var newCompany = {
+            name: startup.name,
+            industry: startup.industry,
+            technology: startup.technology,
+            region: startup.region,
+            employeeCount: startup.employeeCount,
+            totalFunding: startup.totalFunding,
+            websiteLink: startup.websiteLink
+        }
 		newTrialCompany.status = 'Accept';
-		axios
-			.patch('/api/trialcompany/' + startup.id, newTrialCompany)
-			.then(res => {
-				console.log('update trialcompany response: ', res.data);
-				this.setState({
-					viewStartup: false
-				});
-			})
-			.catch(err => console.log(err));
+		// axios
+		// 	.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+		// 	.then(res => {
+		// 		this.setState({
+		// 			viewStartup: false
+		// 		});
+		// 	})
+        //     .catch(err => console.log(err));
+        
+        axios
+            .post('/api/companies/new', newCompany)
+            .then(res => {
+                this.setState({
+                    viewStartup: false
+                })
+            })
+            .catch(err => console.log(err));
+
+        axios
+            .delete('/api/trialcompany/' + startup.id)
+            .then(res => {
+                this.setState({
+                    viewStartup: false
+                })
+            })
+            .catch(err => console.log(err));
 	}
 
 	changeStatusReject() {
@@ -204,11 +223,8 @@ class ViewApplicants extends Component {
 	}
 
 	render() {
-        console.log('before render table');
 		let renderTable = this.state.fullList.map(startup => {
-            console.log('in render table');
 			var trialCompanyList = this.state.fullList;
-			// console.log('USER TEAM LIST', userTeamList);
 			var trialCompany = '';
 			if (trialCompanyList == null) {
 				trialCompany = {
@@ -236,7 +252,6 @@ class ViewApplicants extends Component {
 				/>
 			];
         });
-        console.log('after render table');
 
 		let display;
 		let viewStartup = this.state.viewStartup;
@@ -426,7 +441,7 @@ function TableEntry(props) {
 					'background-color':
 						props.status === 'Accept'
 							? 'lightgreen'
-							: props.status === 'Reject' ? 'lightcoral' : 'white'
+							: props.status === 'Reject' ? 'lightcoral' : 'orange'
 				}}
 			>
 				{props.status}

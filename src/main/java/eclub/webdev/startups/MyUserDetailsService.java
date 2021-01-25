@@ -1,4 +1,4 @@
-package com.example;
+package eclub.webdev.startups;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Loginuser user = repo.findByUserName(username);
-        // System.out.println(username);
+        System.out.println(username);
         if (user == null)
             throw new UsernameNotFoundException(username);
 

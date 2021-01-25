@@ -1,4 +1,4 @@
-package com.example;
+package eclub.webdev.startups;
 
 import java.util.Collection;
 import java.util.Collections;

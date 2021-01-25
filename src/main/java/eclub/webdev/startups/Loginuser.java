@@ -1,4 +1,4 @@
-package com.example;
+package eclub.webdev.startups;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

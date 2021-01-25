@@ -1,4 +1,4 @@
-package com.example;
+package eclub.webdev.startups;
 
 import java.io.IOException;
 import java.util.Calendar;

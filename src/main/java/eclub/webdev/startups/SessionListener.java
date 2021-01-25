@@ -1,4 +1,4 @@
-package com.example;
+package eclub.webdev.startups;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;

@@ -1,4 +1,4 @@
-package eclub.webdev.startups;
+package com.example;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,23 +39,27 @@ import org.springframework.http.HttpMethod;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    // @Autowired
-    // private UserDetailsService userDetailsService;
+    @Autowired
+    private UserDetailsService userDetailsService;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private HttpServlet httpServlet;
 
-    public WebSecurityConfig(HttpServlet httpServlet) {
+    public WebSecurityConfig(MyUserDetailsService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder,
+            HttpServlet httpServlet) {
+        this.userDetailsService = userDetailsService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.httpServlet = httpServlet;
     }
 
-    // @Bean
-    // public AuthenticationProvider authProvider() {
-    //     DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-    //     provider.setUserDetailsService(userDetailsService);
-    //     // provider.setPasswordEncoder(new BCryptPasswordEncoder());
-    //     provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
-    //     return provider;
-    // }
+    @Bean
+    public AuthenticationProvider authProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(userDetailsService);
+        provider.setPasswordEncoder(new BCryptPasswordEncoder());
+        // provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+        return provider;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception { // .anyRequest().authenticated()
@@ -64,7 +68,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // .cors().and().
                 // .failureUrl("/howitworks")
                 .requiresChannel().anyRequest().requiresSecure().and().csrf().disable().authorizeRequests()
-                .antMatchers("/*").permitAll().and().formLogin();
+                .antMatchers("/", "/built/bundle.js", "/resources/**", "/*.js", "/static/**", "/js/**", "/img/**",
+                        "/loginpage", "/login.html", "/badcredentials", "/sessionauth")
+                .permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login.html")
+                .defaultSuccessUrl("/admin", true).failureHandler(customAuthenticationFailureHandler())
+                .loginProcessingUrl("/login-process").permitAll().and().logout().deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true).clearAuthentication(true)
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").permitAll();
 
         // .authorizeRequests().antMatchers("/loginpage", "/login.html",
         // "/login-process").anonymous().and()
@@ -85,28 +95,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    // @Override
-    // public void configure(AuthenticationManagerBuilder auth) throws Exception {
-    //     // auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
-    //     auth.userDetailsService(userDetailsService).passwordEncoder(NoOpPasswordEncoder.getInstance()); // change to
-    //                                                                                                     // bcrypt
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
+        // auth.userDetailsService(userDetailsService).passwordEncoder(NoOpPasswordEncoder.getInstance());
+        // // change to
+        // bcrypt
 
-    // }
+    }
 
-    // @Bean
-    // CorsConfigurationSource corsConfigurationSource() {
-    //     final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-    //     source.registerCorsConfiguration("/**", new CorsConfiguration());
-    //     return source;
-    // }
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", new CorsConfiguration());
+        return source;
+    }
 
-    // @Bean
-    // public AuthenticationFailureHandler customAuthenticationFailureHandler() {
-    //     return new CustomAuthenticationFailureHandler();
-    // }
+    @Bean
+    public AuthenticationFailureHandler customAuthenticationFailureHandler() {
+        return new CustomAuthenticationFailureHandler();
+    }
 
-    // @Bean
-    // public AuthenticationSuccessHandler customAuthenticationSuccessHandler() {
-    //     return new CustomAuthenticationSuccessHandler();
-    // }
+    @Bean
+    public AuthenticationSuccessHandler customAuthenticationSuccessHandler() {
+        return new CustomAuthenticationSuccessHandler();
+    }
 }

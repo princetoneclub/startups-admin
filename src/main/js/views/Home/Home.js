@@ -13,10 +13,11 @@ class Home extends Component {
 	}
 
 	handleApplyClick() {
-		this.props.history.push('/database');
+		this.props.history.push('/loginpage');
 	}
 
 	render() {
+		// console.log('IN HOME RENDER');
 		let button = <ApplyButton onClick={this.handleApplyClick} />;
 		return <div> {button} </div>;
 	}
@@ -27,12 +28,13 @@ function ApplyButton(props) {
 		<div id="welcome-content">
 			<Row className="center-block text-center">
 				<div id="welcome-text">
-					<p>E-Club Startup Database </p>
+					<p>Welcome to the Startup Database Admin Portal </p>
+					<p>Log in to view applications</p>
 				</div>
 				<Col>
 					<div id="begin-button">
 						<Button bsStyle="apply" bsSize="large" onClick={props.onClick}>
-							View Startups
+							Sign in
 						</Button>
 					</div>
 				</Col>

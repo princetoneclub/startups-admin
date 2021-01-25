@@ -248,10 +248,13 @@ class ViewApplicants extends Component {
                         <Table id="user-table">
                             <thead>
                                 <tr id="head">
-                                    <th><button class="button">First Name</button></th>
-                                    <th><button class="button">Last Name</button></th>
-                                    <th><button class="button">Concentration</button></th>
-                                    <th><button class="button">Class Year</button></th>
+                                    <th><button class="button">Name</button></th>
+                                    <th><button class="button">Industry</button></th>
+                                    <th><button class="button">Technology</button></th>
+                                    <th><button class="button">Region</button></th>
+                                    <th><button class="button">Employee Count</button></th>
+                                    <th><button class="button">Total Funding</button></th>
+                                    <th><button class="button">Website Link</button></th>
                                     <th><button class="button">Status</button></th>
                                     <th>More Details</th>
                                 </tr>
@@ -293,7 +296,7 @@ function StartupProfile(props) {
 			<div id="user-profile">
 				<div id="chunk">
 					<p id="header">
-						{props.startup.name}
+						{props.name}
 					</p>
 					<p id="information"> Name: {props.name}</p>
 					<p id="information"> Industry: {props.industry}</p>

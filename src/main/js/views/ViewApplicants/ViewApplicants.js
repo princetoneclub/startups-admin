@@ -147,7 +147,19 @@ class ViewApplicants extends Component {
             region: startup.region,
             employeeCount: startup.employeeCount,
             totalFunding: startup.totalFunding,
-            websiteLink: startup.websiteLink
+            websiteLink: startup.websiteLink,
+			startupLogo: startup.startupLogo,
+			stage: startup.stage,
+			about: startup.about,
+			productInnovation: startup.productInnovation,
+			traction: startup.traction,
+			futurePlans: startup.futurePlans,
+			email: startup.email,
+			tags: startup.tags,
+			oneLiner: startup.oneLiner,
+			founderName: startup.founderName,
+			founderRole: startup.founderRole,
+			founderPhoto: startup.founderPhoto
         }
 		newTrialCompany.status = 'Accept';
 		// axios

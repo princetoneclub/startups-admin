@@ -19,6 +19,9 @@ class StartupPage extends Component {
 
 	constructor(props) {
 		super(props);
+		this.changeStatusFirst = this.changeStatusFirst.bind(this);
+		this.changeStatusReject = this.changeStatusReject.bind(this);
+		this.changeStatusMaybe = this.changeStatusMaybe.bind(this);
 	}
 
 	componentDidMount() {
@@ -35,6 +38,110 @@ class StartupPage extends Component {
 			.catch(err => console.log(err));
 	}
 
+	changeStatusFirst() {
+        var trialCompanyList = this.state.fullList;
+		console.log('TRIAL COMPANY LIST', trialCompanyList);
+		var startup = '';
+		trialCompanyList.forEach(element => {
+			if (element.id === this.state.startup.id) {
+				startup = element;
+			}
+		});
+        var newTrialCompany = startup;
+        var newCompany = {
+            name: startup.name,
+            industry: startup.industry,
+            technology: startup.technology,
+            region: startup.region,
+            employeeCount: startup.employeeCount,
+            totalFunding: startup.totalFunding,
+            websiteLink: startup.websiteLink,
+			startupLogo: startup.startupLogo,
+			stage: startup.stage,
+			about: startup.about,
+			productInnovation: startup.productInnovation,
+			traction: startup.traction,
+			futurePlans: startup.futurePlans,
+			email: startup.email,
+			tags: startup.tags,
+			oneLiner: startup.oneLiner,
+			founderName: startup.founderName,
+			founderRole: startup.founderRole,
+			founderPhoto: startup.founderPhoto
+        }
+		newTrialCompany.status = 'Accept';
+		// axios
+		// 	.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+		// 	.then(res => {
+		// 		this.setState({
+		// 			viewStartup: false
+		// 		});
+		// 	})
+        //     .catch(err => console.log(err));
+        
+        axios
+            .post('/api/companies/new', newCompany)
+            .then(res => {
+                this.setState({
+                    viewStartup: false
+                })
+            })
+            .catch(err => console.log(err));
+
+        axios
+            .delete('/api/trialcompany/' + startup.id)
+            .then(res => {
+                this.setState({
+                    viewStartup: false
+                })
+            })
+            .catch(err => console.log(err));
+	}
+
+	changeStatusReject() {
+		var trialCompanyList = this.state.fullList;
+		console.log('TRIAL COMPANY LIST', trialCompanyList);
+		var startup = '';
+		trialCompanyList.forEach(element => {
+			if (element.id === this.state.startup.id) {
+				startup = element;
+			}
+		});
+        var newTrialCompany = startup;
+		newTrialCompany.status = 'Reject';
+		axios
+			.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+			.then(res => {
+				console.log('update trialcompany response: ', res.data);
+				this.setState({
+					viewStartup: false
+				});
+			})
+			.catch(err => console.log(err));
+	}
+
+	changeStatusMaybe() {
+		var trialCompanyList = this.state.fullList;
+		console.log('TRIAL COMPANY LIST', trialCompanyList);
+		var startup = '';
+		trialCompanyList.forEach(element => {
+			if (element.id === this.state.startup.id) {
+				startup = element;
+			}
+		});
+        var newTrialCompany = startup;
+		newTrialCompany.status = 'Maybe';
+		axios
+			.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+			.then(res => {
+				console.log('update trialcompany response: ', res.data);
+				this.setState({
+					viewStartup: false
+				});
+			})
+			.catch(err => console.log(err));
+	}
+
 	render() {
         console.log(this.state.currStartup);
 		var display = (<StartupProfile startup={this.state.currStartup}></StartupProfile>);
@@ -45,17 +152,30 @@ class StartupPage extends Component {
 
 function StartupProfile(props) {
 	return (
-		<div class="grid-container">
-			<div class="startup-logo"><StartupLogoName startup={props.startup}></StartupLogoName></div>
-			<div class="some-fields"><SomeFields startup={props.startup}></SomeFields></div>
-			<div class="tags"><Tags startup={props.startup}></Tags></div>  
-			{/* <div class="industry-hq"><IndustryHQ startup={props.startup}></IndustryHQ></div> */}
-			<div class="about"><About startup={props.startup}></About></div>
-			<div class="product-innovation"><ProductInnovation startup={props.startup}></ProductInnovation></div>
-			<div class="traction"><Traction startup={props.startup}></Traction></div>
-			<div class="future-plans"><FuturePlans startup={props.startup}></FuturePlans></div>
-			<div class="one-liner"><OneLiner startup={props.startup}></OneLiner></div>
-			<div class="founding-team"><FoundingTeam startup={props.startup}></FoundingTeam></div>
+		<div>
+			<div class="grid-container">
+				<div class="startup-logo"><StartupLogoName startup={props.startup}></StartupLogoName></div>
+				<div class="some-fields"><SomeFields startup={props.startup}></SomeFields></div>
+				<div class="tags"><Tags startup={props.startup}></Tags></div>  
+				{/* <div class="industry-hq"><IndustryHQ startup={props.startup}></IndustryHQ></div> */}
+				<div class="about"><About startup={props.startup}></About></div>
+				<div class="product-innovation"><ProductInnovation startup={props.startup}></ProductInnovation></div>
+				<div class="traction"><Traction startup={props.startup}></Traction></div>
+				<div class="future-plans"><FuturePlans startup={props.startup}></FuturePlans></div>
+				<div class="one-liner"><OneLiner startup={props.startup}></OneLiner></div>
+				<div class="founding-team"><FoundingTeam startup={props.startup}></FoundingTeam></div>
+			</div>
+			<div align="center">
+				<div style={{ display: 'inline-block' }}>
+					<AcceptStatusButton onClick={props.onAccept} />
+				</div>
+				<div style={{ display: 'inline-block' }}>
+					<MaybeStatusButton onClick={props.onMaybe} />
+				</div>
+				<div style={{ display: 'inline-block' }}>
+					<RejectStatusButton onClick={props.onReject} />
+				</div>
+			</div>
 		</div>
 	);
 }
@@ -186,5 +306,46 @@ function FoundingTeam(props) {
 	);
 }
 
+function AcceptStatusButton(props) {
+	return (
+		<div id="welcome-content">
+			<Row className="center-block text-center">
+				<div>
+					<Button bsStyle="first-rank" bsSize="large" onClick={props.onClick}>
+						Accept
+					</Button>
+				</div>
+			</Row>
+		</div>
+	);
+}
+
+function RejectStatusButton(props) {
+	return (
+		<div id="welcome-content">
+			<Row className="center-block text-center">
+				<div>
+					<Button bsStyle="reject-rank" bsSize="large" onClick={props.onClick}>
+						Reject
+					</Button>
+				</div>
+			</Row>
+		</div>
+	);
+}
+
+function MaybeStatusButton(props) {
+	return (
+		<div id="welcome-content">
+			<Row className="center-block text-center">
+				<div>
+					<Button bsStyle="maybe-rank" bsSize="large" onClick={props.onClick}>
+						Maybe
+					</Button>
+				</div>
+			</Row>
+		</div>
+	);
+}
 
 export default StartupPage;

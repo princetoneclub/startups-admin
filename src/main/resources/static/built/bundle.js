@@ -4241,7 +4241,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.web-link {\r\n  color: #337ab7 !important;\r\n  text-decoration:none;\r\n}\r\n\r\n/*left*/\r\n.startup-logo {grid-area: startup-logo;}\r\n.some-fields {grid-area: some-fields;}\r\n.tags {grid-area: tags;}\r\n/* .industry-hq {grid-area: industry-hq;} */\r\n\r\n/*middle*/\r\n.about {grid-area: about; background-color: white;}\r\n.product-innovation {grid-area: product-innovation; background-color: white;}\r\n.traction {grid-area: traction; background-color: white;}\r\n.future-plans {grid-area: future-plans; background-color: white;}\r\n\r\n/*right*/\r\n.one-liner {grid-area: one-liner;}\r\n.founding-team {grid-area: founding-team;}\r\n\r\n#startupLogo {\r\n  background-color: white;\r\n}\r\n\r\n#founderLogo {\r\n  background-color:white;\r\n  margin-top:20px;\r\n  margin-bottom:20px;\r\n}\r\n\r\n#page-container {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.grid-container {\r\n  display: grid;\r\n  grid-template-columns: 25% 25% 25% 25%;\r\n  grid-template-areas:\r\n    'startup-logo about about one-liner'\r\n    'some-fields product-innovation product-innovation founding-team'\r\n    'tags traction traction founding-team'\r\n    'tags future-plans future-plans founding-team';\r\n  column-gap: 10px;\r\n  background-color: #f4f4f4;\r\n  padding: 10px;\r\n  padding-bottom: 90px; \r\n}\r\n\r\n.grid-container > div {\r\n  /* background-color: rgba(255, 255, 255, 0.8); */\r\n  text-align: center;\r\n  /* padding: 20px 0; */\r\n  /* font-size: 30px; */\r\n  /* background-color: white; */\r\n}\r\n\r\n.industryhqtags {\r\n  background-color:white;\r\n  padding: 20px;\r\n  transition: 0.5s;\r\n  margin-right:10px;\r\n  margin-left:10px;\r\n}\r\n\r\n.industryhqtags:hover {\r\n  background-color: rgba(255,153,102,0.2);\r\n}\r\n\r\n.middle-column {\r\n  text-align:left;\r\n  font-size:14px !important;\r\n  padding:20px;\r\n}\r\n\r\n.left-column {\r\n  text-align:left;\r\n  font-size:16px !important;\r\n  padding:20px;\r\n}\r\n\r\n/* #header {\r\n\tbackground-color: #3891b8;\r\n\tborder-radius: 10px 10px 0 0;\r\n\tpadding: 10px 0px 10px 20px;\r\n\tfont-size: 24px;\r\n}\r\n\r\n#information, #information-last, \r\n#response, #response-last,\r\n#question {\r\n  font-family: Avenir-Light;\r\n  color: #fff;\r\n  text-align: left;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-bottom: 0px;\r\n  min-width: 200px;\r\n  max-width: 60vw;\r\n  padding-top: 10px;\r\n  padding-left: 20px;\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  line-height: 1.42857143;\r\n  font-weight: lighter;\r\n}\r\n\r\n#information, #information-last {\r\n    background-color: white;\r\n    color: #272727;\r\n    padding: 10px 10px 10px 20px;\r\n    border-bottom: 1px solid #d5d5d5;\r\n    font-size: 18px;\r\n  }\r\n\r\n#information-last {\r\nborder-bottom: none;\r\nborder-radius: 0px 0px 10px 10px;\r\n} */", ""]);
+exports.push([module.i, "body {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.web-link {\r\n  color: #337ab7 !important;\r\n  text-decoration:none;\r\n}\r\n\r\n/*left*/\r\n.startup-logo {grid-area: startup-logo;}\r\n.some-fields {grid-area: some-fields;}\r\n.tags {grid-area: tags;}\r\n/* .industry-hq {grid-area: industry-hq;} */\r\n\r\n/*middle*/\r\n.about {grid-area: about; background-color: white;}\r\n.product-innovation {grid-area: product-innovation; background-color: white;}\r\n.traction {grid-area: traction; background-color: white;}\r\n.future-plans {grid-area: future-plans; background-color: white;}\r\n\r\n/*right*/\r\n.one-liner {grid-area: one-liner;}\r\n.founding-team {grid-area: founding-team;}\r\n\r\n#startupLogo {\r\n  background-color: white;\r\n}\r\n\r\n#founderLogo {\r\n  background-color:white;\r\n  margin-top:20px;\r\n  margin-bottom:20px;\r\n}\r\n\r\n#page-container {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.grid-container {\r\n  display: grid;\r\n  grid-template-columns: 25% 25% 25% 25%;\r\n  grid-template-areas:\r\n    'startup-logo about about one-liner'\r\n    'some-fields product-innovation product-innovation founding-team'\r\n    'tags traction traction founding-team'\r\n    'tags future-plans future-plans founding-team';\r\n  column-gap: 10px;\r\n  background-color: #f4f4f4;\r\n  padding: 10px;\r\n  padding-bottom: 90px; \r\n}\r\n\r\n.grid-container > div {\r\n  /* background-color: rgba(255, 255, 255, 0.8); */\r\n  text-align: center;\r\n  /* padding: 20px 0; */\r\n  /* font-size: 30px; */\r\n  /* background-color: white; */\r\n}\r\n\r\n.industryhqtags {\r\n  background-color:white;\r\n  padding: 20px;\r\n  transition: 0.5s;\r\n  margin-right:10px;\r\n  margin-left:10px;\r\n}\r\n\r\n.industryhqtags:hover {\r\n  background-color: rgba(255,153,102,0.2);\r\n}\r\n\r\n.middle-column {\r\n  text-align:left;\r\n  font-size:14px !important;\r\n  padding:20px;\r\n}\r\n\r\n.left-column {\r\n  text-align:left;\r\n  font-size:16px !important;\r\n  padding:20px;\r\n}\r\n\r\n#firstrank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: limegreen;\r\n}\r\n\r\n#mayberank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: orange;\r\n}\r\n\r\n#rejectrank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: crimson;\r\n}\r\n\r\n.btn-first-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: limegreen;\r\n}\r\n\r\n.btn-first-rank:hover {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: green;\r\n}\r\n\r\n.btn-maybe-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: orange;\r\n}\r\n\r\n.btn-maybe-rank:hover {\r\n\tcolor:white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: darkorange;\r\n}\r\n\r\n.btn-reject-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: crimson;\r\n}\r\n\r\n.btn-reject-rank:hover {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: red;\r\n}\r\n\r\n/* #header {\r\n\tbackground-color: #3891b8;\r\n\tborder-radius: 10px 10px 0 0;\r\n\tpadding: 10px 0px 10px 20px;\r\n\tfont-size: 24px;\r\n}\r\n\r\n#information, #information-last, \r\n#response, #response-last,\r\n#question {\r\n  font-family: Avenir-Light;\r\n  color: #fff;\r\n  text-align: left;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-bottom: 0px;\r\n  min-width: 200px;\r\n  max-width: 60vw;\r\n  padding-top: 10px;\r\n  padding-left: 20px;\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  line-height: 1.42857143;\r\n  font-weight: lighter;\r\n}\r\n\r\n#information, #information-last {\r\n    background-color: white;\r\n    color: #272727;\r\n    padding: 10px 10px 10px 20px;\r\n    border-bottom: 1px solid #d5d5d5;\r\n    font-size: 18px;\r\n  }\r\n\r\n#information-last {\r\nborder-bottom: none;\r\nborder-radius: 0px 0px 10px 10px;\r\n} */", ""]);
 // Exports
 module.exports = exports;
 
@@ -64340,6 +64340,9 @@ var StartupPage = /*#__PURE__*/function (_Component) {
       currStartupId: 0
     });
 
+    _this.changeStatusFirst = _this.changeStatusFirst.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this));
+    _this.changeStatusReject = _this.changeStatusReject.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this));
+    _this.changeStatusMaybe = _this.changeStatusMaybe.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this));
     return _this;
   }
 
@@ -64362,6 +64365,115 @@ var StartupPage = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "changeStatusFirst",
+    value: function changeStatusFirst() {
+      var _this3 = this;
+
+      var trialCompanyList = this.state.fullList;
+      console.log('TRIAL COMPANY LIST', trialCompanyList);
+      var startup = '';
+      trialCompanyList.forEach(function (element) {
+        if (element.id === _this3.state.startup.id) {
+          startup = element;
+        }
+      });
+      var newTrialCompany = startup;
+      var newCompany = {
+        name: startup.name,
+        industry: startup.industry,
+        technology: startup.technology,
+        region: startup.region,
+        employeeCount: startup.employeeCount,
+        totalFunding: startup.totalFunding,
+        websiteLink: startup.websiteLink,
+        startupLogo: startup.startupLogo,
+        stage: startup.stage,
+        about: startup.about,
+        productInnovation: startup.productInnovation,
+        traction: startup.traction,
+        futurePlans: startup.futurePlans,
+        email: startup.email,
+        tags: startup.tags,
+        oneLiner: startup.oneLiner,
+        founderName: startup.founderName,
+        founderRole: startup.founderRole,
+        founderPhoto: startup.founderPhoto
+      };
+      newTrialCompany.status = 'Accept'; // axios
+      // 	.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+      // 	.then(res => {
+      // 		this.setState({
+      // 			viewStartup: false
+      // 		});
+      // 	})
+      //     .catch(err => console.log(err));
+
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/companies/new', newCompany).then(function (res) {
+        _this3.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a["delete"]('/api/trialcompany/' + startup.id).then(function (res) {
+        _this3.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    }
+  }, {
+    key: "changeStatusReject",
+    value: function changeStatusReject() {
+      var _this4 = this;
+
+      var trialCompanyList = this.state.fullList;
+      console.log('TRIAL COMPANY LIST', trialCompanyList);
+      var startup = '';
+      trialCompanyList.forEach(function (element) {
+        if (element.id === _this4.state.startup.id) {
+          startup = element;
+        }
+      });
+      var newTrialCompany = startup;
+      newTrialCompany.status = 'Reject';
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.patch('/api/trialcompany/' + startup.id, newTrialCompany).then(function (res) {
+        console.log('update trialcompany response: ', res.data);
+
+        _this4.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    }
+  }, {
+    key: "changeStatusMaybe",
+    value: function changeStatusMaybe() {
+      var _this5 = this;
+
+      var trialCompanyList = this.state.fullList;
+      console.log('TRIAL COMPANY LIST', trialCompanyList);
+      var startup = '';
+      trialCompanyList.forEach(function (element) {
+        if (element.id === _this5.state.startup.id) {
+          startup = element;
+        }
+      });
+      var newTrialCompany = startup;
+      newTrialCompany.status = 'Maybe';
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.patch('/api/trialcompany/' + startup.id, newTrialCompany).then(function (res) {
+        console.log('update trialcompany response: ', res.data);
+
+        _this5.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       console.log(this.state.currStartup);
@@ -64376,7 +64488,7 @@ var StartupPage = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 function StartupProfile(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
     "class": "grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
     "class": "startup-logo"
@@ -64414,7 +64526,27 @@ function StartupProfile(props) {
     "class": "founding-team"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(FoundingTeam, {
     startup: props.startup
-  })));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    align: "center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    style: {
+      display: 'inline-block'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(AcceptStatusButton, {
+    onClick: props.onAccept
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    style: {
+      display: 'inline-block'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(MaybeStatusButton, {
+    onClick: props.onMaybe
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    style: {
+      display: 'inline-block'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(RejectStatusButton, {
+    onClick: props.onReject
+  }))));
 }
 
 function StartupLogoName(props) {
@@ -64575,6 +64707,42 @@ function FoundingTeam(props) {
       fontSize: '18px'
     }
   }, props.startup.founderName, ", ", props.startup.founderRole));
+}
+
+function AcceptStatusButton(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    id: "welcome-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["Row"], {
+    className: "center-block text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+    bsStyle: "first-rank",
+    bsSize: "large",
+    onClick: props.onClick
+  }, "Accept"))));
+}
+
+function RejectStatusButton(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    id: "welcome-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["Row"], {
+    className: "center-block text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+    bsStyle: "reject-rank",
+    bsSize: "large",
+    onClick: props.onClick
+  }, "Reject"))));
+}
+
+function MaybeStatusButton(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+    id: "welcome-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["Row"], {
+    className: "center-block text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+    bsStyle: "maybe-rank",
+    bsSize: "large",
+    onClick: props.onClick
+  }, "Maybe"))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (StartupPage);

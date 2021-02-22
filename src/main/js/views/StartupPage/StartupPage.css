@@ -83,6 +83,57 @@ body {
   padding:20px;
 }
 
+#firstrank {
+	display:inline-block;
+	background-color: limegreen;
+}
+
+#mayberank {
+	display:inline-block;
+	background-color: orange;
+}
+
+#rejectrank {
+	display:inline-block;
+	background-color: crimson;
+}
+
+.btn-first-rank {
+	color: white;
+	display:inline-block;
+	background-color: limegreen;
+}
+
+.btn-first-rank:hover {
+	color: white;
+	display:inline-block;
+	background-color: green;
+}
+
+.btn-maybe-rank {
+	color: white;
+	display:inline-block;
+	background-color: orange;
+}
+
+.btn-maybe-rank:hover {
+	color:white;
+	display:inline-block;
+	background-color: darkorange;
+}
+
+.btn-reject-rank {
+	color: white;
+	display:inline-block;
+	background-color: crimson;
+}
+
+.btn-reject-rank:hover {
+	color: white;
+	display:inline-block;
+	background-color: red;
+}
+
 /* #header {
 	background-color: #3891b8;
 	border-radius: 10px 10px 0 0;

@@ -1,0 +1,124 @@
+body {
+  background-color:#f4f4f4;
+}
+
+.web-link {
+  color: #337ab7 !important;
+  text-decoration:none;
+}
+
+/*left*/
+.startup-logo {grid-area: startup-logo;}
+.some-fields {grid-area: some-fields;}
+.tags {grid-area: tags;}
+/* .industry-hq {grid-area: industry-hq;} */
+
+/*middle*/
+.about {grid-area: about; background-color: white;}
+.product-innovation {grid-area: product-innovation; background-color: white;}
+.traction {grid-area: traction; background-color: white;}
+.future-plans {grid-area: future-plans; background-color: white;}
+
+/*right*/
+.one-liner {grid-area: one-liner;}
+.founding-team {grid-area: founding-team;}
+
+#startupLogo {
+  background-color: white;
+}
+
+#founderLogo {
+  background-color:white;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#page-container {
+  background-color:#f4f4f4;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+    'startup-logo about about one-liner'
+    'some-fields product-innovation product-innovation founding-team'
+    'tags traction traction founding-team'
+    'tags future-plans future-plans founding-team';
+  column-gap: 10px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  padding-bottom: 90px; 
+}
+
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  /* padding: 20px 0; */
+  /* font-size: 30px; */
+  /* background-color: white; */
+}
+
+.industryhqtags {
+  background-color:white;
+  padding: 20px;
+  transition: 0.5s;
+  margin-right:10px;
+  margin-left:10px;
+}
+
+.industryhqtags:hover {
+  background-color: rgba(255,153,102,0.2);
+}
+
+.middle-column {
+  text-align:left;
+  font-size:14px !important;
+  padding:20px;
+}
+
+.left-column {
+  text-align:left;
+  font-size:16px !important;
+  padding:20px;
+}
+
+/* #header {
+	background-color: #3891b8;
+	border-radius: 10px 10px 0 0;
+	padding: 10px 0px 10px 20px;
+	font-size: 24px;
+}
+
+#information, #information-last, 
+#response, #response-last,
+#question {
+  font-family: Avenir-Light;
+  color: #fff;
+  text-align: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  min-width: 200px;
+  max-width: 60vw;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  line-height: 1.42857143;
+  font-weight: lighter;
+}
+
+#information, #information-last {
+    background-color: white;
+    color: #272727;
+    padding: 10px 10px 10px 20px;
+    border-bottom: 1px solid #d5d5d5;
+    font-size: 18px;
+  }
+
+#information-last {
+border-bottom: none;
+border-radius: 0px 0px 10px 10px;
+} */

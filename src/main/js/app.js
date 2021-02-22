@@ -11,6 +11,7 @@ import Login from './views/Login/login.js';
 import LoginBadCred from './views/Login/loginbadcred.js';
 import Home from './views/Home/Home.js';
 import Error from './views/404/404.js';
+import StartupPage from './views/StartupPage/StartupPage.js'
 // import Edit from './views/EditAccount/Editaccount.js';
 
 class App extends Component {
@@ -63,6 +64,7 @@ class App extends Component {
 						<Route path="/admin" component={Admin} />
 						<Route path="/loginpage" component={Login} />
 						<Route path="/badcredentials" component={LoginBadCred} />
+						<Route path="/startuppage" component={StartupPage} />
 						<Route component={Error} />
 					</Switch>
 				</div>

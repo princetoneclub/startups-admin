@@ -459,9 +459,9 @@ function TableEntry(props) {
 				{props.status}
 			</td>
 			<td>
-				<Button bsStyle="view-more" onClick={props.onClick}>
-					view
-				</Button>
+				{/* <Button bsStyle="view-more" onClick={props.onClick}> */}
+				<a class="website-link" href="'+'/startuppage?id='+d.id+'" target="_blank">View</a>
+				{/* </Button> */}
 			</td>
 		</tr>
 	);

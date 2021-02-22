@@ -64350,7 +64350,7 @@ var StartupPage = /*#__PURE__*/function (_Component) {
 
       var values = query_string__WEBPACK_IMPORTED_MODULE_12___default.a.parse(this.props.location.search);
       var startupId = values.id;
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.get('/api/companies/' + startupId).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.get('/api/trialcompany/' + startupId).then(function (res) {
         console.log(res);
         console.log(res.data);
 

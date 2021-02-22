@@ -26,7 +26,7 @@ class StartupPage extends Component {
 		var startupId = values.id;
 
         axios
-			.get('/api/companies/'+startupId)
+			.get('/api/trialcompany/'+startupId)
 			.then(res => {
                 console.log(res);
                 console.log(res.data);

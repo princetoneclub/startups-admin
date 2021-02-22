@@ -64478,7 +64478,10 @@ var StartupPage = /*#__PURE__*/function (_Component) {
     value: function render() {
       console.log(this.state.currStartup);
       var display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(StartupProfile, {
-        startup: this.state.currStartup
+        startup: this.state.currStartup,
+        onAccept: this.changeStatusFirst,
+        onMaybe: this.changeStatusMaybe,
+        onReject: this.changeStatusReject
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, display);
     }

@@ -39,15 +39,15 @@ class StartupPage extends Component {
 	}
 
 	changeStatusFirst() {
-        var trialCompanyList = this.state.fullList;
-		console.log('TRIAL COMPANY LIST', trialCompanyList);
-		var startup = '';
-		trialCompanyList.forEach(element => {
-			if (element.id === this.state.startup.id) {
-				startup = element;
-			}
-		});
-        var newTrialCompany = startup;
+        // var trialCompanyList = this.state.fullList;
+		// console.log('TRIAL COMPANY LIST', trialCompanyList);
+		// var startup = '';
+		// trialCompanyList.forEach(element => {
+		// 	if (element.id === this.state.startup.id) {
+		// 		startup = element;
+		// 	}
+		// });
+        var newTrialCompany = this.state.currStartup;
         var newCompany = {
             name: startup.name,
             industry: startup.industry,
@@ -89,7 +89,7 @@ class StartupPage extends Component {
             .catch(err => console.log(err));
 
         axios
-            .delete('/api/trialcompany/' + startup.id)
+            .delete('/api/trialcompany/' + this.state.currStartup.id)
             .then(res => {
                 this.setState({
                     viewStartup: false
@@ -99,18 +99,18 @@ class StartupPage extends Component {
 	}
 
 	changeStatusReject() {
-		var trialCompanyList = this.state.fullList;
-		console.log('TRIAL COMPANY LIST', trialCompanyList);
-		var startup = '';
-		trialCompanyList.forEach(element => {
-			if (element.id === this.state.startup.id) {
-				startup = element;
-			}
-		});
-        var newTrialCompany = startup;
+		// var trialCompanyList = this.state.fullList;
+		// console.log('TRIAL COMPANY LIST', trialCompanyList);
+		// var startup = '';
+		// trialCompanyList.forEach(element => {
+		// 	if (element.id === this.state.startup.id) {
+		// 		startup = element;
+		// 	}
+		// });
+        var newTrialCompany = this.state.currStartup;
 		newTrialCompany.status = 'Reject';
 		axios
-			.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+			.patch('/api/trialcompany/' + this.state.currStartup.id, newTrialCompany)
 			.then(res => {
 				console.log('update trialcompany response: ', res.data);
 				this.setState({
@@ -121,18 +121,18 @@ class StartupPage extends Component {
 	}
 
 	changeStatusMaybe() {
-		var trialCompanyList = this.state.fullList;
-		console.log('TRIAL COMPANY LIST', trialCompanyList);
-		var startup = '';
-		trialCompanyList.forEach(element => {
-			if (element.id === this.state.startup.id) {
-				startup = element;
-			}
-		});
-        var newTrialCompany = startup;
+		// var trialCompanyList = this.state.fullList;
+		// console.log('TRIAL COMPANY LIST', trialCompanyList);
+		// var startup = '';
+		// trialCompanyList.forEach(element => {
+		// 	if (element.id === this.state.startup.id) {
+		// 		startup = element;
+		// 	}
+		// });
+        var newTrialCompany = this.state.currStartup;
 		newTrialCompany.status = 'Maybe';
 		axios
-			.patch('/api/trialcompany/' + startup.id, newTrialCompany)
+			.patch('/api/trialcompany/' + this.state.currStartup.id, newTrialCompany)
 			.then(res => {
 				console.log('update trialcompany response: ', res.data);
 				this.setState({

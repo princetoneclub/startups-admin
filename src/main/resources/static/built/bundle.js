@@ -64369,15 +64369,15 @@ var StartupPage = /*#__PURE__*/function (_Component) {
     value: function changeStatusFirst() {
       var _this3 = this;
 
-      var trialCompanyList = this.state.fullList;
-      console.log('TRIAL COMPANY LIST', trialCompanyList);
-      var startup = '';
-      trialCompanyList.forEach(function (element) {
-        if (element.id === _this3.state.startup.id) {
-          startup = element;
-        }
-      });
-      var newTrialCompany = startup;
+      // var trialCompanyList = this.state.fullList;
+      // console.log('TRIAL COMPANY LIST', trialCompanyList);
+      // var startup = '';
+      // trialCompanyList.forEach(element => {
+      // 	if (element.id === this.state.startup.id) {
+      // 		startup = element;
+      // 	}
+      // });
+      var newTrialCompany = this.state.currStartup;
       var newCompany = {
         name: startup.name,
         industry: startup.industry,
@@ -64415,7 +64415,7 @@ var StartupPage = /*#__PURE__*/function (_Component) {
       })["catch"](function (err) {
         return console.log(err);
       });
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a["delete"]('/api/trialcompany/' + startup.id).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a["delete"]('/api/trialcompany/' + this.state.currStartup.id).then(function (res) {
         _this3.setState({
           viewStartup: false
         });
@@ -64428,17 +64428,17 @@ var StartupPage = /*#__PURE__*/function (_Component) {
     value: function changeStatusReject() {
       var _this4 = this;
 
-      var trialCompanyList = this.state.fullList;
-      console.log('TRIAL COMPANY LIST', trialCompanyList);
-      var startup = '';
-      trialCompanyList.forEach(function (element) {
-        if (element.id === _this4.state.startup.id) {
-          startup = element;
-        }
-      });
-      var newTrialCompany = startup;
+      // var trialCompanyList = this.state.fullList;
+      // console.log('TRIAL COMPANY LIST', trialCompanyList);
+      // var startup = '';
+      // trialCompanyList.forEach(element => {
+      // 	if (element.id === this.state.startup.id) {
+      // 		startup = element;
+      // 	}
+      // });
+      var newTrialCompany = this.state.currStartup;
       newTrialCompany.status = 'Reject';
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.patch('/api/trialcompany/' + startup.id, newTrialCompany).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.patch('/api/trialcompany/' + this.state.currStartup.id, newTrialCompany).then(function (res) {
         console.log('update trialcompany response: ', res.data);
 
         _this4.setState({
@@ -64453,17 +64453,17 @@ var StartupPage = /*#__PURE__*/function (_Component) {
     value: function changeStatusMaybe() {
       var _this5 = this;
 
-      var trialCompanyList = this.state.fullList;
-      console.log('TRIAL COMPANY LIST', trialCompanyList);
-      var startup = '';
-      trialCompanyList.forEach(function (element) {
-        if (element.id === _this5.state.startup.id) {
-          startup = element;
-        }
-      });
-      var newTrialCompany = startup;
+      // var trialCompanyList = this.state.fullList;
+      // console.log('TRIAL COMPANY LIST', trialCompanyList);
+      // var startup = '';
+      // trialCompanyList.forEach(element => {
+      // 	if (element.id === this.state.startup.id) {
+      // 		startup = element;
+      // 	}
+      // });
+      var newTrialCompany = this.state.currStartup;
       newTrialCompany.status = 'Maybe';
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.patch('/api/trialcompany/' + startup.id, newTrialCompany).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.patch('/api/trialcompany/' + this.state.currStartup.id, newTrialCompany).then(function (res) {
         console.log('update trialcompany response: ', res.data);
 
         _this5.setState({

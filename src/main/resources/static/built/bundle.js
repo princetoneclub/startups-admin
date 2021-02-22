@@ -65182,7 +65182,7 @@ function TableEntry(props) {
     }
   }, props.status), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
     "class": "website-link",
-    href: "'+'/startuppage?id='+d.id+'",
+    href: "/startuppage?id=" + props.id,
     target: "_blank"
   }, "View")));
 }

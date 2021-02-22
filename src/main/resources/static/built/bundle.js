@@ -64976,6 +64976,7 @@ var ViewApplicants = /*#__PURE__*/function (_Component) {
         return [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(TableEntry, {
           key: startup.id,
           name: startup.name,
+          startupId: startup.id,
           industry: startup.industry,
           technology: startup.technology,
           region: startup.region,
@@ -65176,13 +65177,14 @@ function StartupProfile(props) {
 
 
 function TableEntry(props) {
+  console.log(props);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.industry), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.technology), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.region), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.employeeCount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.totalFunding), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, props.websiteLink), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", {
     style: {
       'background-color': props.status === 'Accept' ? 'lightgreen' : props.status === 'Reject' ? 'lightcoral' : 'orange'
     }
   }, props.status), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
     "class": "website-link",
-    href: "/startuppage?id=" + props.id,
+    href: "/startuppage?id=" + props.startupId,
     target: "_blank"
   }, "View")));
 }

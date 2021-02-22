@@ -49,25 +49,25 @@ class StartupPage extends Component {
 		// });
         var newTrialCompany = this.state.currStartup;
         var newCompany = {
-            name: startup.name,
-            industry: startup.industry,
-            technology: startup.technology,
-            region: startup.region,
-            employeeCount: startup.employeeCount,
-            totalFunding: startup.totalFunding,
-            websiteLink: startup.websiteLink,
-			startupLogo: startup.startupLogo,
-			stage: startup.stage,
-			about: startup.about,
-			productInnovation: startup.productInnovation,
-			traction: startup.traction,
-			futurePlans: startup.futurePlans,
-			email: startup.email,
-			tags: startup.tags,
-			oneLiner: startup.oneLiner,
-			founderName: startup.founderName,
-			founderRole: startup.founderRole,
-			founderPhoto: startup.founderPhoto
+            name: this.state.currStartup.name,
+            industry: this.state.currStartup.industry,
+            technology: this.state.currStartup.technology,
+            region: this.state.currStartup.region,
+            employeeCount: this.state.currStartup.employeeCount,
+            totalFunding: this.state.currStartup.totalFunding,
+            websiteLink: this.state.currStartup.websiteLink,
+			startupLogo: this.state.currStartup.startupLogo,
+			stage: this.state.currStartup.stage,
+			about: this.state.currStartup.about,
+			productInnovation: this.state.currStartup.productInnovation,
+			traction: this.state.currStartup.traction,
+			futurePlans: this.state.currStartup.futurePlans,
+			email: this.state.currStartup.email,
+			tags: this.state.currStartup.tags,
+			oneLiner: this.state.currStartup.oneLiner,
+			founderName: this.state.currStartup.founderName,
+			founderRole: this.state.currStartup.founderRole,
+			founderPhoto: this.state.currStartup.founderPhoto
         }
 		newTrialCompany.status = 'Accept';
 		// axios

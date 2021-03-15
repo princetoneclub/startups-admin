@@ -30,6 +30,11 @@ public class CompanyController {
         return get(company.getId());
     }
 
+    @RequestMapping(value="/{id}/founders", method=RequestMethod.GET)
+    public List<Founder> getAllFounders(@PathVariable("id") Long id) {
+        return startupRepo.findByStartupId(id);
+    }
+
     @RequestMapping
     public List<Company> all() {
         return repository.findAll();

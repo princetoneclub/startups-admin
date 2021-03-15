@@ -49,6 +49,11 @@ public class TrialCompanyController {
         return new ResponseEntity<TrialCompany>(trialcompany, HttpStatus.OK);
     }
 
+    @RequestMapping(value="/{id}/founders", method=RequestMethod.GET)
+    public List<Founder> getAllFounders(@PathVariable("id") Long id) {
+        return startupRepo.findByStartupId(id);
+    }
+
     @RequestMapping
     public List<TrialCompany> all() {
         return repository.findAll();

@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/trialcompany")
 public class TrialCompanyController {
     private TrialCompanyRepository repository;
+    private FounderRepository founderRepo;
 
     @Autowired
-    public TrialCompanyController(TrialCompanyRepository repository) {
+    public TrialCompanyController(TrialCompanyRepository repository, FounderRepository founderRepo) {
         this.repository = repository;
+        this.founderRepo = founderRepo;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -51,7 +53,7 @@ public class TrialCompanyController {
 
     @RequestMapping(value="/{id}/founders", method=RequestMethod.GET)
     public List<Founder> getAllFounders(@PathVariable("id") Long id) {
-        return startupRepo.findByStartupId(id);
+        return founderRepo.findByStartupId(id);
     }
 
     @RequestMapping

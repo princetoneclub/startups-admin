@@ -153,7 +153,12 @@ class StartupPage extends Component {
 
 	render() {
         console.log(this.state.currStartup);
-		var display = (<StartupProfile founders={this.state.founders} startup={this.state.currStartup} onAccept={this.changeStatusFirst} onMaybe={this.changeStatusMaybe} onReject={this.changeStatusReject}></StartupProfile>);
+		if (this.state.founders.length==0) {
+			var display = (<div></div>);
+		}
+		else {
+			var display = (<StartupProfile founders={this.state.founders} startup={this.state.currStartup} onAccept={this.changeStatusFirst} onMaybe={this.changeStatusMaybe} onReject={this.changeStatusReject}></StartupProfile>);
+		}
 
 		return <div>{display}</div>;
 	}

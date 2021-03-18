@@ -64488,13 +64488,19 @@ var StartupPage = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       console.log(this.state.currStartup);
-      var display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(StartupProfile, {
-        founders: this.state.founders,
-        startup: this.state.currStartup,
-        onAccept: this.changeStatusFirst,
-        onMaybe: this.changeStatusMaybe,
-        onReject: this.changeStatusReject
-      });
+
+      if (this.state.founders.length == 0) {
+        var display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null);
+      } else {
+        var display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(StartupProfile, {
+          founders: this.state.founders,
+          startup: this.state.currStartup,
+          onAccept: this.changeStatusFirst,
+          onMaybe: this.changeStatusMaybe,
+          onReject: this.changeStatusReject
+        });
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, display);
     }
   }]);

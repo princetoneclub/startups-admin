@@ -94,12 +94,13 @@ class StartupPage extends Component {
             .post('/api/companies/new', newCompany)
             .then(res => {
 				newCompanyId = res.data.id;
+				console.log(newCompanyId);
                 this.setState({
                     viewStartup: false
                 })
             })
             .catch(err => console.log(err));
-		
+		console.log(newCompanyId);
 		var newFounder1 = {
 			founderName: this.state.founders[0].founderName,
 			founderRole: this.state.founders[0].founderRole,
@@ -139,37 +140,52 @@ class StartupPage extends Component {
 		axios
             .post('/api/founders/new', newFounder1)
             .then(res => {
+				this.setState({
+                    viewStartup: false
+                })
             })
             .catch(err => console.log(err));
 		axios
             .post('/api/founders/new', newFounder2)
             .then(res => {
+				this.setState({
+                    viewStartup: false
+                })
             })
             .catch(err => console.log(err));
 		axios
             .post('/api/founders/new', newFounder3)
             .then(res => {
+				this.setState({
+                    viewStartup: false
+                })
             })
             .catch(err => console.log(err));
 		axios
             .post('/api/founders/new', newFounder4)
             .then(res => {
+				this.setState({
+                    viewStartup: false
+                })
             })
             .catch(err => console.log(err));
 		axios
             .post('/api/founders/new', newFounder5)
             .then(res => {
-            })
-            .catch(err => console.log(err));
-
-        axios
-            .delete('/api/trialcompany/' + this.state.currStartup.id)
-            .then(res => {
-                this.setState({
+				this.setState({
                     viewStartup: false
                 })
             })
             .catch(err => console.log(err));
+
+        // axios
+        //     .delete('/api/trialcompany/' + this.state.currStartup.id)
+        //     .then(res => {
+        //         this.setState({
+        //             viewStartup: false
+        //         })
+        //     })
+        //     .catch(err => console.log(err));
 	}
 
 	changeStatusReject() {

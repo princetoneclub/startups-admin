@@ -64422,6 +64422,7 @@ var StartupPage = /*#__PURE__*/function (_Component) {
       var newCompanyId = 0;
       axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/companies/new', newCompany).then(function (res) {
         newCompanyId = res.data.id;
+        console.log(newCompanyId);
 
         _this3.setState({
           viewStartup: false
@@ -64429,6 +64430,7 @@ var StartupPage = /*#__PURE__*/function (_Component) {
       })["catch"](function (err) {
         return console.log(err);
       });
+      console.log(newCompanyId);
       var newFounder1 = {
         founderName: this.state.founders[0].founderName,
         founderRole: this.state.founders[0].founderRole,
@@ -64464,28 +64466,48 @@ var StartupPage = /*#__PURE__*/function (_Component) {
         linkedin: this.state.founders[4].linkedin,
         founderPhoto: this.state.founders[4].founderPhoto
       };
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder1).then(function (res) {})["catch"](function (err) {
-        return console.log(err);
-      });
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder2).then(function (res) {})["catch"](function (err) {
-        return console.log(err);
-      });
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder3).then(function (res) {})["catch"](function (err) {
-        return console.log(err);
-      });
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder4).then(function (res) {})["catch"](function (err) {
-        return console.log(err);
-      });
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder5).then(function (res) {})["catch"](function (err) {
-        return console.log(err);
-      });
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a["delete"]('/api/trialcompany/' + this.state.currStartup.id).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder1).then(function (res) {
         _this3.setState({
           viewStartup: false
         });
       })["catch"](function (err) {
         return console.log(err);
       });
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder2).then(function (res) {
+        _this3.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder3).then(function (res) {
+        _this3.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder4).then(function (res) {
+        _this3.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder5).then(function (res) {
+        _this3.setState({
+          viewStartup: false
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      }); // axios
+      //     .delete('/api/trialcompany/' + this.state.currStartup.id)
+      //     .then(res => {
+      //         this.setState({
+      //             viewStartup: false
+      //         })
+      //     })
+      //     .catch(err => console.log(err));
     }
   }, {
     key: "changeStatusReject",

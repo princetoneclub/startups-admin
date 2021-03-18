@@ -47,7 +47,7 @@ class StartupPage extends Component {
 			.catch(err => console.log(err));
 	}
 
-	changeStatusFirst() {
+	async changeStatusFirst() {
         // var trialCompanyList = this.state.fullList;
 		// console.log('TRIAL COMPANY LIST', trialCompanyList);
 		// var startup = '';
@@ -90,7 +90,7 @@ class StartupPage extends Component {
         //     .catch(err => console.log(err));
         
 		var newCompanyId = 0;
-        axios
+        await axios
             .post('/api/companies/new', newCompany)
             .then(res => {
 				newCompanyId = res.data.id;
@@ -137,7 +137,7 @@ class StartupPage extends Component {
 			founderPhoto: this.state.founders[4].founderPhoto
 		}
 
-		axios
+		await axios
             .post('/api/founders/new', newFounder1)
             .then(res => {
 				this.setState({
@@ -145,7 +145,7 @@ class StartupPage extends Component {
                 })
             })
             .catch(err => console.log(err));
-		axios
+		await axios
             .post('/api/founders/new', newFounder2)
             .then(res => {
 				this.setState({
@@ -153,7 +153,7 @@ class StartupPage extends Component {
                 })
             })
             .catch(err => console.log(err));
-		axios
+		await axios
             .post('/api/founders/new', newFounder3)
             .then(res => {
 				this.setState({
@@ -161,7 +161,7 @@ class StartupPage extends Component {
                 })
             })
             .catch(err => console.log(err));
-		axios
+		await axios
             .post('/api/founders/new', newFounder4)
             .then(res => {
 				this.setState({
@@ -169,7 +169,7 @@ class StartupPage extends Component {
                 })
             })
             .catch(err => console.log(err));
-		axios
+		await axios
             .post('/api/founders/new', newFounder5)
             .then(res => {
 				this.setState({
@@ -178,7 +178,7 @@ class StartupPage extends Component {
             })
             .catch(err => console.log(err));
 
-        // axios
+        //await axios
         //     .delete('/api/trialcompany/' + this.state.currStartup.id)
         //     .then(res => {
         //         this.setState({

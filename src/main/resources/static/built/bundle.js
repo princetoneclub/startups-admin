@@ -64410,41 +64410,6 @@ var StartupPage = /*#__PURE__*/function (_Component) {
         founderRole: this.state.currStartup.founderRole,
         founderPhoto: this.state.currStartup.founderPhoto
       };
-      var newFounder1 = {
-        founderName: this.state.founders[0].founderName,
-        founderRole: this.state.founders[0].founderRole,
-        startupId: this.state.founders[0].startupId,
-        linkedin: this.state.founders[0].linkedin,
-        founderPhoto: this.state.founders[0].founderPhoto
-      };
-      var newFounder2 = {
-        founderName: this.state.founders[1].founderName,
-        founderRole: this.state.founders[1].founderRole,
-        startupId: this.state.founders[1].startupId,
-        linkedin: this.state.founders[1].linkedin,
-        founderPhoto: this.state.founders[1].founderPhoto
-      };
-      var newFounder3 = {
-        founderName: this.state.founders[2].founderName,
-        founderRole: this.state.founders[2].founderRole,
-        startupId: this.state.founders[2].startupId,
-        linkedin: this.state.founders[2].linkedin,
-        founderPhoto: this.state.founders[2].founderPhoto
-      };
-      var newFounder4 = {
-        founderName: this.state.founders[3].founderName,
-        founderRole: this.state.founders[3].founderRole,
-        startupId: this.state.founders[3].startupId,
-        linkedin: this.state.founders[3].linkedin,
-        founderPhoto: this.state.founders[3].founderPhoto
-      };
-      var newFounder5 = {
-        founderName: this.state.founders[4].founderName,
-        founderRole: this.state.founders[4].founderRole,
-        startupId: this.state.founders[4].startupId,
-        linkedin: this.state.founders[4].linkedin,
-        founderPhoto: this.state.founders[4].founderPhoto
-      };
       newTrialCompany.status = 'Accept'; // axios
       // 	.patch('/api/trialcompany/' + startup.id, newTrialCompany)
       // 	.then(res => {
@@ -64464,6 +64429,41 @@ var StartupPage = /*#__PURE__*/function (_Component) {
       })["catch"](function (err) {
         return console.log(err);
       });
+      var newFounder1 = {
+        founderName: this.state.founders[0].founderName,
+        founderRole: this.state.founders[0].founderRole,
+        companyId: newCompanyId,
+        linkedin: this.state.founders[0].linkedin,
+        founderPhoto: this.state.founders[0].founderPhoto
+      };
+      var newFounder2 = {
+        founderName: this.state.founders[1].founderName,
+        founderRole: this.state.founders[1].founderRole,
+        companyId: newCompanyId,
+        linkedin: this.state.founders[1].linkedin,
+        founderPhoto: this.state.founders[1].founderPhoto
+      };
+      var newFounder3 = {
+        founderName: this.state.founders[2].founderName,
+        founderRole: this.state.founders[2].founderRole,
+        companyId: newCompanyId,
+        linkedin: this.state.founders[2].linkedin,
+        founderPhoto: this.state.founders[2].founderPhoto
+      };
+      var newFounder4 = {
+        founderName: this.state.founders[3].founderName,
+        founderRole: this.state.founders[3].founderRole,
+        companyId: newCompanyId,
+        linkedin: this.state.founders[3].linkedin,
+        founderPhoto: this.state.founders[3].founderPhoto
+      };
+      var newFounder5 = {
+        founderName: this.state.founders[4].founderName,
+        founderRole: this.state.founders[4].founderRole,
+        companyId: newCompanyId,
+        linkedin: this.state.founders[4].linkedin,
+        founderPhoto: this.state.founders[4].founderPhoto
+      };
       axios__WEBPACK_IMPORTED_MODULE_8___default.a.post('/api/founders/new', newFounder1).then(function (res) {})["catch"](function (err) {
         return console.log(err);
       });

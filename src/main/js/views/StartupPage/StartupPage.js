@@ -78,6 +78,41 @@ class StartupPage extends Component {
 			founderRole: this.state.currStartup.founderRole,
 			founderPhoto: this.state.currStartup.founderPhoto
         }
+		var newFounder1 = {
+			founderName: this.state.founders[0].founderName,
+			founderRole: this.state.founders[0].founderRole,
+			startupId: this.state.founders[0].startupId,
+			linkedin: this.state.founders[0].linkedin,
+			founderPhoto: this.state.founders[0].founderPhoto
+		}
+		var newFounder2 = {
+			founderName: this.state.founders[1].founderName,
+			founderRole: this.state.founders[1].founderRole,
+			startupId: this.state.founders[1].startupId,
+			linkedin: this.state.founders[1].linkedin,
+			founderPhoto: this.state.founders[1].founderPhoto
+		}
+		var newFounder3 = {
+			founderName: this.state.founders[2].founderName,
+			founderRole: this.state.founders[2].founderRole,
+			startupId: this.state.founders[2].startupId,
+			linkedin: this.state.founders[2].linkedin,
+			founderPhoto: this.state.founders[2].founderPhoto
+		}
+		var newFounder4 = {
+			founderName: this.state.founders[3].founderName,
+			founderRole: this.state.founders[3].founderRole,
+			startupId: this.state.founders[3].startupId,
+			linkedin: this.state.founders[3].linkedin,
+			founderPhoto: this.state.founders[3].founderPhoto
+		}
+		var newFounder5 = {
+			founderName: this.state.founders[4].founderName,
+			founderRole: this.state.founders[4].founderRole,
+			startupId: this.state.founders[4].startupId,
+			linkedin: this.state.founders[4].linkedin,
+			founderPhoto: this.state.founders[4].founderPhoto
+		}
 		newTrialCompany.status = 'Accept';
 		// axios
 		// 	.patch('/api/trialcompany/' + startup.id, newTrialCompany)
@@ -88,12 +123,40 @@ class StartupPage extends Component {
 		// 	})
         //     .catch(err => console.log(err));
         
+		var newCompanyId = 0;
         axios
             .post('/api/companies/new', newCompany)
             .then(res => {
+				newCompanyId = res.data.id;
                 this.setState({
                     viewStartup: false
                 })
+            })
+            .catch(err => console.log(err));
+		
+		axios
+            .post('/api/founders/new', newFounder1)
+            .then(res => {
+            })
+            .catch(err => console.log(err));
+		axios
+            .post('/api/founders/new', newFounder2)
+            .then(res => {
+            })
+            .catch(err => console.log(err));
+		axios
+            .post('/api/founders/new', newFounder3)
+            .then(res => {
+            })
+            .catch(err => console.log(err));
+		axios
+            .post('/api/founders/new', newFounder4)
+            .then(res => {
+            })
+            .catch(err => console.log(err));
+		axios
+            .post('/api/founders/new', newFounder5)
+            .then(res => {
             })
             .catch(err => console.log(err));
 
@@ -316,7 +379,7 @@ function FoundingTeam(props) {
 			<br />
 			<img id="founderLogo" src={imageString} width="100" height='auto'></img>
 			<br />
-			<div style={{fontSize: '18px'}}><a id="linkedinlink" href={props.founders[0].linkedin}>{props.founders[0].founderName}, {props.founders[0].founderRole}</a></div>
+			<div style={{fontSize: '18px'}}><a id="linkedinlink" href={props.founders[0].linkedin} target="_blank">{props.founders[0].founderName}, {props.founders[0].founderRole}</a></div>
 		</div>
 	);
 }

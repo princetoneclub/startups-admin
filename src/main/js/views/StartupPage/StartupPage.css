@@ -34,7 +34,7 @@ body {
 }
 
 #linkedinlink {
-  color: black;
+  color: black !important;
 }
 
 #page-container {

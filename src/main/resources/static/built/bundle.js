@@ -64531,6 +64531,16 @@ var StartupPage = /*#__PURE__*/function (_Component) {
                 });
 
               case 22:
+                _context.next = 24;
+                return axios__WEBPACK_IMPORTED_MODULE_10___default.a["delete"]('/api/trialcompany/' + this.state.currStartup.id).then(function (res) {
+                  _this3.setState({
+                    viewStartup: false
+                  });
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 24:
               case "end":
                 return _context.stop();
             }

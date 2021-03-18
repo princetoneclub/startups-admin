@@ -178,14 +178,14 @@ class StartupPage extends Component {
             })
             .catch(err => console.log(err));
 
-        //await axios
-        //     .delete('/api/trialcompany/' + this.state.currStartup.id)
-        //     .then(res => {
-        //         this.setState({
-        //             viewStartup: false
-        //         })
-        //     })
-        //     .catch(err => console.log(err));
+        await axios
+            .delete('/api/trialcompany/' + this.state.currStartup.id)
+            .then(res => {
+                this.setState({
+                    viewStartup: false
+                })
+            })
+            .catch(err => console.log(err));
 	}
 
 	changeStatusReject() {

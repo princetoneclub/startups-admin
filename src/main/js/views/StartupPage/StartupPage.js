@@ -15,6 +15,7 @@ class StartupPage extends Component {
 	state = {
         currStartup: '',
         currStartupId: 0,
+		founders: []
     };
 
 	constructor(props) {
@@ -34,6 +35,14 @@ class StartupPage extends Component {
                 console.log(res);
                 console.log(res.data);
 				this.setState({ currStartup: res.data });
+			})
+			.catch(err => console.log(err));
+		axios
+			.get('/api/trialcompany/'+startupId+"/founders")
+			.then(res => {
+                console.log(res);
+                console.log(res.data);
+				this.setState({ founders: res.data });
 			})
 			.catch(err => console.log(err));
 	}
@@ -144,7 +153,7 @@ class StartupPage extends Component {
 
 	render() {
         console.log(this.state.currStartup);
-		var display = (<StartupProfile startup={this.state.currStartup} onAccept={this.changeStatusFirst} onMaybe={this.changeStatusMaybe} onReject={this.changeStatusReject}></StartupProfile>);
+		var display = (<StartupProfile founders={this.state.founders} startup={this.state.currStartup} onAccept={this.changeStatusFirst} onMaybe={this.changeStatusMaybe} onReject={this.changeStatusReject}></StartupProfile>);
 
 		return <div>{display}</div>;
 	}
@@ -163,7 +172,7 @@ function StartupProfile(props) {
 				<div class="traction"><Traction startup={props.startup}></Traction></div>
 				<div class="future-plans"><FuturePlans startup={props.startup}></FuturePlans></div>
 				<div class="one-liner"><OneLiner startup={props.startup}></OneLiner></div>
-				<div class="founding-team"><FoundingTeam startup={props.startup}></FoundingTeam></div>
+				<div class="founding-team"><FoundingTeam founders={props.founders} startup={props.startup}></FoundingTeam></div>
 			</div>
 			<div align="center">
 				<div style={{ display: 'inline-block' }}>
@@ -293,7 +302,8 @@ function OneLiner(props) {
 }
 
 function FoundingTeam(props) {
-	const data = props.startup.founderPhoto;
+	console.log(props.founders);
+	const data = props.founders[0].founderPhoto;
 	const imageString = "data:image/png;base64,"+data;
 	return(
 		<div>
@@ -301,7 +311,7 @@ function FoundingTeam(props) {
 			<br />
 			<img id="founderLogo" src={imageString} width="100" height='auto'></img>
 			<br />
-			<div style={{fontSize: '18px'}}>{props.startup.founderName}, {props.startup.founderRole}</div>
+			<div style={{fontSize: '18px'}}><a id="linkedinlink" href={props.founders[0].linkedin}>{props.founders[0].founderName}, {props.founders[0].founderRole}</a></div>
 		</div>
 	);
 }

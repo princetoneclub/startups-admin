@@ -4241,7 +4241,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.web-link {\r\n  color: #337ab7 !important;\r\n  text-decoration:none;\r\n}\r\n\r\n/*left*/\r\n.startup-logo {grid-area: startup-logo;}\r\n.some-fields {grid-area: some-fields;}\r\n.tags {grid-area: tags;}\r\n/* .industry-hq {grid-area: industry-hq;} */\r\n\r\n/*middle*/\r\n.about {grid-area: about; background-color: white;}\r\n.product-innovation {grid-area: product-innovation; background-color: white;}\r\n.traction {grid-area: traction; background-color: white;}\r\n.future-plans {grid-area: future-plans; background-color: white;}\r\n\r\n/*right*/\r\n.one-liner {grid-area: one-liner;}\r\n.founding-team {grid-area: founding-team;}\r\n\r\n#startupLogo {\r\n  background-color: white;\r\n}\r\n\r\n#founderLogo {\r\n  background-color:white;\r\n  margin-top:20px;\r\n  margin-bottom:20px;\r\n}\r\n\r\n#page-container {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.grid-container {\r\n  display: grid;\r\n  grid-template-columns: 25% 25% 25% 25%;\r\n  grid-template-areas:\r\n    'startup-logo about about one-liner'\r\n    'some-fields product-innovation product-innovation founding-team'\r\n    'tags traction traction founding-team'\r\n    'tags future-plans future-plans founding-team';\r\n  column-gap: 10px;\r\n  background-color: #f4f4f4;\r\n  padding: 10px;\r\n  padding-bottom: 90px; \r\n}\r\n\r\n.grid-container > div {\r\n  /* background-color: rgba(255, 255, 255, 0.8); */\r\n  text-align: center;\r\n  /* padding: 20px 0; */\r\n  /* font-size: 30px; */\r\n  /* background-color: white; */\r\n}\r\n\r\n.industryhqtags {\r\n  background-color:white;\r\n  padding: 20px;\r\n  transition: 0.5s;\r\n  margin-right:10px;\r\n  margin-left:10px;\r\n}\r\n\r\n.industryhqtags:hover {\r\n  background-color: rgba(255,153,102,0.2);\r\n}\r\n\r\n.middle-column {\r\n  text-align:left;\r\n  font-size:14px !important;\r\n  padding:20px;\r\n}\r\n\r\n.left-column {\r\n  text-align:left;\r\n  font-size:16px !important;\r\n  padding:20px;\r\n}\r\n\r\n#firstrank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: limegreen;\r\n}\r\n\r\n#mayberank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: orange;\r\n}\r\n\r\n#rejectrank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: crimson;\r\n}\r\n\r\n.btn-first-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: limegreen;\r\n}\r\n\r\n.btn-first-rank:hover {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: green;\r\n}\r\n\r\n.btn-maybe-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: orange;\r\n}\r\n\r\n.btn-maybe-rank:hover {\r\n\tcolor:white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: darkorange;\r\n}\r\n\r\n.btn-reject-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: crimson;\r\n}\r\n\r\n.btn-reject-rank:hover {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: red;\r\n}\r\n\r\n/* #header {\r\n\tbackground-color: #3891b8;\r\n\tborder-radius: 10px 10px 0 0;\r\n\tpadding: 10px 0px 10px 20px;\r\n\tfont-size: 24px;\r\n}\r\n\r\n#information, #information-last, \r\n#response, #response-last,\r\n#question {\r\n  font-family: Avenir-Light;\r\n  color: #fff;\r\n  text-align: left;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-bottom: 0px;\r\n  min-width: 200px;\r\n  max-width: 60vw;\r\n  padding-top: 10px;\r\n  padding-left: 20px;\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  line-height: 1.42857143;\r\n  font-weight: lighter;\r\n}\r\n\r\n#information, #information-last {\r\n    background-color: white;\r\n    color: #272727;\r\n    padding: 10px 10px 10px 20px;\r\n    border-bottom: 1px solid #d5d5d5;\r\n    font-size: 18px;\r\n  }\r\n\r\n#information-last {\r\nborder-bottom: none;\r\nborder-radius: 0px 0px 10px 10px;\r\n} */", ""]);
+exports.push([module.i, "body {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.web-link {\r\n  color: #337ab7 !important;\r\n  text-decoration:none;\r\n}\r\n\r\n/*left*/\r\n.startup-logo {grid-area: startup-logo;}\r\n.some-fields {grid-area: some-fields;}\r\n.tags {grid-area: tags;}\r\n/* .industry-hq {grid-area: industry-hq;} */\r\n\r\n/*middle*/\r\n.about {grid-area: about; background-color: white;}\r\n.product-innovation {grid-area: product-innovation; background-color: white;}\r\n.traction {grid-area: traction; background-color: white;}\r\n.future-plans {grid-area: future-plans; background-color: white;}\r\n\r\n/*right*/\r\n.one-liner {grid-area: one-liner;}\r\n.founding-team {grid-area: founding-team;}\r\n\r\n#startupLogo {\r\n  background-color: white;\r\n}\r\n\r\n#founderLogo {\r\n  background-color:white;\r\n  margin-top:20px;\r\n  margin-bottom:20px;\r\n}\r\n\r\n#linkedinlink {\r\n  color: black;\r\n}\r\n\r\n#page-container {\r\n  background-color:#f4f4f4;\r\n}\r\n\r\n.grid-container {\r\n  display: grid;\r\n  grid-template-columns: 25% 25% 25% 25%;\r\n  grid-template-areas:\r\n    'startup-logo about about one-liner'\r\n    'some-fields product-innovation product-innovation founding-team'\r\n    'tags traction traction founding-team'\r\n    'tags future-plans future-plans founding-team';\r\n  column-gap: 10px;\r\n  background-color: #f4f4f4;\r\n  padding: 10px;\r\n  padding-bottom: 90px; \r\n}\r\n\r\n.grid-container > div {\r\n  /* background-color: rgba(255, 255, 255, 0.8); */\r\n  text-align: center;\r\n  /* padding: 20px 0; */\r\n  /* font-size: 30px; */\r\n  /* background-color: white; */\r\n}\r\n\r\n.industryhqtags {\r\n  background-color:white;\r\n  padding: 20px;\r\n  transition: 0.5s;\r\n  margin-right:10px;\r\n  margin-left:10px;\r\n}\r\n\r\n.industryhqtags:hover {\r\n  background-color: rgba(255,153,102,0.2);\r\n}\r\n\r\n.middle-column {\r\n  text-align:left;\r\n  font-size:14px !important;\r\n  padding:20px;\r\n}\r\n\r\n.left-column {\r\n  text-align:left;\r\n  font-size:16px !important;\r\n  padding:20px;\r\n}\r\n\r\n#firstrank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: limegreen;\r\n}\r\n\r\n#mayberank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: orange;\r\n}\r\n\r\n#rejectrank {\r\n\tdisplay:inline-block;\r\n\tbackground-color: crimson;\r\n}\r\n\r\n.btn-first-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: limegreen;\r\n}\r\n\r\n.btn-first-rank:hover {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: green;\r\n}\r\n\r\n.btn-maybe-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: orange;\r\n}\r\n\r\n.btn-maybe-rank:hover {\r\n\tcolor:white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: darkorange;\r\n}\r\n\r\n.btn-reject-rank {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: crimson;\r\n}\r\n\r\n.btn-reject-rank:hover {\r\n\tcolor: white;\r\n\tdisplay:inline-block;\r\n\tbackground-color: red;\r\n}\r\n\r\n/* #header {\r\n\tbackground-color: #3891b8;\r\n\tborder-radius: 10px 10px 0 0;\r\n\tpadding: 10px 0px 10px 20px;\r\n\tfont-size: 24px;\r\n}\r\n\r\n#information, #information-last, \r\n#response, #response-last,\r\n#question {\r\n  font-family: Avenir-Light;\r\n  color: #fff;\r\n  text-align: left;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-bottom: 0px;\r\n  min-width: 200px;\r\n  max-width: 60vw;\r\n  padding-top: 10px;\r\n  padding-left: 20px;\r\n  padding-bottom: 0px;\r\n  font-size: 18px;\r\n  line-height: 1.42857143;\r\n  font-weight: lighter;\r\n}\r\n\r\n#information, #information-last {\r\n    background-color: white;\r\n    color: #272727;\r\n    padding: 10px 10px 10px 20px;\r\n    border-bottom: 1px solid #d5d5d5;\r\n    font-size: 18px;\r\n  }\r\n\r\n#information-last {\r\nborder-bottom: none;\r\nborder-radius: 0px 0px 10px 10px;\r\n} */", ""]);
 // Exports
 module.exports = exports;
 
@@ -64337,7 +64337,8 @@ var StartupPage = /*#__PURE__*/function (_Component) {
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this), "state", {
       currStartup: '',
-      currStartupId: 0
+      currStartupId: 0,
+      founders: []
     });
 
     _this.changeStatusFirst = _this.changeStatusFirst.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this));
@@ -64359,6 +64360,16 @@ var StartupPage = /*#__PURE__*/function (_Component) {
 
         _this2.setState({
           currStartup: res.data
+        });
+      })["catch"](function (err) {
+        return console.log(err);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.get('/api/trialcompany/' + startupId + "/founders").then(function (res) {
+        console.log(res);
+        console.log(res.data);
+
+        _this2.setState({
+          founders: res.data
         });
       })["catch"](function (err) {
         return console.log(err);
@@ -64478,6 +64489,7 @@ var StartupPage = /*#__PURE__*/function (_Component) {
     value: function render() {
       console.log(this.state.currStartup);
       var display = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(StartupProfile, {
+        founders: this.state.founders,
         startup: this.state.currStartup,
         onAccept: this.changeStatusFirst,
         onMaybe: this.changeStatusMaybe,
@@ -64528,6 +64540,7 @@ function StartupProfile(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
     "class": "founding-team"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(FoundingTeam, {
+    founders: props.founders,
     startup: props.startup
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
     align: "center"
@@ -64694,7 +64707,8 @@ function OneLiner(props) {
 }
 
 function FoundingTeam(props) {
-  var data = props.startup.founderPhoto;
+  console.log(props.founders);
+  var data = props.founders[0].founderPhoto;
   var imageString = "data:image/png;base64," + data;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("b", {
     style: {
@@ -64709,7 +64723,10 @@ function FoundingTeam(props) {
     style: {
       fontSize: '18px'
     }
-  }, props.startup.founderName, ", ", props.startup.founderRole));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+    id: "linkedinlink",
+    href: props.founders[0].linkedin
+  }, props.founders[0].founderName, ", ", props.founders[0].founderRole)));
 }
 
 function AcceptStatusButton(props) {

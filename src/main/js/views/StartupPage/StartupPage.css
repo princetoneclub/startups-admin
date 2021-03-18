@@ -33,6 +33,10 @@ body {
   margin-bottom:20px;
 }
 
+#linkedinlink {
+  color: black;
+}
+
 #page-container {
   background-color:#f4f4f4;
 }

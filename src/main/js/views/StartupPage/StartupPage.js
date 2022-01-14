@@ -284,7 +284,7 @@ function StartupLogoName(props) {
 			<img id="startupLogo" src={imageString} width="100" height="auto"></img>
 			<br />
 			<b style={{fontSize: '30px'}}>{props.startup.name}</b>
-			<hr style={{width:'60%',height:'2px',color:'#484848','background-color':'#484848'}}/>
+			<hr style={{width:'95%',height:'2px',color:'#484848','background-color':'#484848'}}/>
 		</div>
 	);
 }
@@ -293,13 +293,13 @@ function SomeFields(props) {
 	return(
 		<div style={{fontSize:'16px'}}>
 			<div style={{textAlign:'left',width:'60%',margin:'auto'}}>
-				Website: <a class="web-link" href={"//"+props.startup.websiteLink} target="_blank">{props.startup.websiteLink}</a>
+				<b>Website:</b> <a class="web-link" href={"//"+props.startup.websiteLink} target="_blank">click here</a>
 				<br />
-				Email: <a class="web-link" href={"mailto:"+props.startup.email}>{props.startup.email}</a>
+				<b>Email:</b> <a class="web-link" href={"mailto:"+props.startup.email}>{props.startup.email}</a>
 				<br />
-				Stage: {props.startup.stage}
+				<b>Stage:</b> {props.startup.stage}
 			</div>
-			<hr style={{width:'60%',height:'2px',color:'#484848','background-color':'#484848'}}/>
+			<hr style={{width:'95%',height:'2px',color:'#484848','background-color':'#484848'}}/>
 		</div>
 	);
 }
@@ -329,7 +329,7 @@ function IndustryHQ(props) {
 function About(props) {
 	return(
 		<div>
-			<b style={{fontSize:'18px'}}>ABOUT</b>
+			<b style={{fontSize:'18px'}}>About</b>
 			<br />
 			<div class="middle-column">
 				{props.startup.about}
@@ -341,7 +341,7 @@ function About(props) {
 function ProductInnovation(props) {
 	return(
 		<div>
-			<b style={{fontSize:'18px'}}>PRODUCT INNOVATION</b>
+			<b style={{fontSize:'18px'}}>Product Innovation</b>
 			<br />
 			<div class="middle-column">
 				{props.startup.productInnovation}
@@ -353,7 +353,7 @@ function ProductInnovation(props) {
 function Traction(props) {
 	return(
 		<div>
-			<b style={{fontSize:'18px'}}>TRACTION</b>
+			<b style={{fontSize:'18px'}}>Traction</b>
 			<br />
 			<div class="middle-column">
 				{props.startup.traction}
@@ -365,7 +365,7 @@ function Traction(props) {
 function FuturePlans(props) {
 	return(
 		<div>
-			<b style={{fontSize:'18px'}}>FUTURE PLANS</b>
+			<b style={{fontSize:'18px'}}>Future Plans</b>
 			<br />
 			<div class="middle-column">
 				{props.startup.futurePlans}
@@ -377,12 +377,12 @@ function FuturePlans(props) {
 function OneLiner(props) {
 	return(
 		<div>
-			<b style={{fontSize:'18px'}}>ONE LINER</b>
+			<b style={{fontSize:'18px'}}>One Liner</b>
 			<br />
 			<div class="left-column">
 				{props.startup.oneLiner}
 			</div>
-			<hr style={{width:'80%',height:'2px',color:'#484848','background-color':'#484848'}}/>
+			<hr style={{width:'95%',height:'2px',color:'#484848','background-color':'#484848'}}/>
 		</div>
 	);
 }
@@ -393,11 +393,15 @@ function FoundingTeam(props) {
 	const imageString = "data:image/png;base64,"+data;
 	return(
 		<div>
-			<b style={{fontSize:'18px'}}>FOUNDING TEAM</b>
+			<b style={{fontSize:'18px'}}>Founding Team</b>
 			<br />
-			<img id="founderLogo" src={imageString} width="100" height='auto'></img>
+			{/* <img id="founderLogo" src={imageString} width="100" height='auto'></img> */}
 			<br />
-			<div style={{fontSize: '18px'}}><a id="linkedinlink" href={props.founders[0].linkedin} target="_blank">{props.founders[0].founderName}, {props.founders[0].founderRole}</a></div>
+			<div style={{fontSize: '15px'}}><a id="linkedinlink" href={props.founders[0].linkedin} target="_blank">{props.founders[0].founderName}  {props.founders[0].founderRole}</a></div>
+			<div style={{fontSize: '15px'}}><a id="linkedinlink" href={props.founders[1].linkedin} target="_blank">{props.founders[1].founderName}  {props.founders[1].founderRole}</a></div>
+			<div style={{fontSize: '15px'}}><a id="linkedinlink" href={props.founders[2].linkedin} target="_blank">{props.founders[2].founderName}  {props.founders[2].founderRole}</a></div>
+			<div style={{fontSize: '15px'}}><a id="linkedinlink" href={props.founders[3].linkedin} target="_blank">{props.founders[3].founderName}  {props.founders[3].founderRole}</a></div>
+			<div style={{fontSize: '15px'}}><a id="linkedinlink" href={props.founders[4].linkedin} target="_blank">{props.founders[4].founderName}  {props.founders[4].founderRole}</a></div>
 		</div>
 	);
 }
